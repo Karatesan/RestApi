@@ -12,4 +12,10 @@ public class GlobalExceptionHandler {
 	public String employeeNotFoundHandler(EmployeeNotFoundException ex) {
 		return ex.getMessage();
 	}
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	@ExceptionHandler(OrderNotFoundException.class)
+	public String orderNotFoundHandler(OrderNotFoundException ex) {
+		return ex.getMessage();
+	}
+	
 }
